@@ -2,10 +2,11 @@
 # from jinja2 import Template
 # import csv
 import pandas as pd
-df_ba = pd.read_csv('studies_ba.csv')
-df_ma = pd.read_csv('studies_ma.csv')
+df_ba = pd.read_csv('data/studies_ba.csv')
+df_ma = pd.read_csv('data/studies_ma.csv')
+df_both = pd.read_csv('data/studies_both.csv')
 # df.drop_duplicates()
-# df2 = pd.read_csv('studies_ba.csv')
+# df2 = pd.read_csv('data/studies_ba.csv')
 # df = pd.concat([df1, df2], axis=1)
 #df = dff[:]
 # base_studies = ['Economics', 'Electronics']
@@ -78,6 +79,15 @@ settings_sunburst_ba = {
         parent=list(df_ba.parent),
         character=list(df_ba.character),
         value=get_value_list(df_ba),
+        # dff=df
+    )
+}
+settings_sunburst_both = {
+    'title': get_title(df_both),
+    'sunburst_dict': dict(
+        parent=list(df_both.parent),
+        character=list(df_both.character),
+        value=get_value_list(df_both),
         # dff=df
     )
 }
