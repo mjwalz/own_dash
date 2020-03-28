@@ -50,8 +50,8 @@ coverage.xml
 docs/_build/
 .DS_Store
 prod_config.py
-maryland/static/maryland/images_example/
-maryland/static/maryland/images_storage/
-maryland/static/maryland/images_holder/
+
 Untitled.ipynb
 .ipynb_checkpoints/
+
+data
