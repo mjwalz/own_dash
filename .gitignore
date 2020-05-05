@@ -55,3 +55,4 @@ Untitled.ipynb
 .ipynb_checkpoints/
 
 data
+.venv*
