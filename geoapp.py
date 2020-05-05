@@ -16,10 +16,10 @@ import json
 import plotly.express as px
 # df = px.data.election()
 # geojson = px.data.election_geojson()
-file_name = 'data/gemeinden_simplify200.geojson'
+# file_name = 'data/gemeinden_simplify200.geojson'
 # geojson = json.geojson(file_name)
-with open(file_name) as f:
-    data = json.load(f)
+# with open(file_name) as f:
+#     data = json.load(f)
 
 """
 type, crs, source, features
