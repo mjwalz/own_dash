@@ -54,5 +54,10 @@ prod_config.py
 Untitled.ipynb
 .ipynb_checkpoints/
 
+<<<<<<< HEAD
 #data
 
+=======
+data
+.venv*
+>>>>>>> 8c557aa09fe023f630fe655d0087495b5f54939c
