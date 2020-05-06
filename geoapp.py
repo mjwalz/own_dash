@@ -5,7 +5,7 @@ import dash_html_components as html
 
 from geo import create_geo_fig_title
 
-fig, title = create_geo_fig_title('two')
+fig, title = create_geo_fig_title('three')
 
 
 app = dash.Dash()

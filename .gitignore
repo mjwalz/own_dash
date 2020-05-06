@@ -54,4 +54,5 @@ prod_config.py
 Untitled.ipynb
 .ipynb_checkpoints/
 
-data
+#data
+

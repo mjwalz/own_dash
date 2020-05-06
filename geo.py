@@ -67,6 +67,7 @@ def second_one():
         color='Joly',  # color='winner',  # color='Bergeron',
         # this paints it
         locations="district",
+        hover_name="district",
         featureidkey="properties.district",
         # needs CENTER!!!
         # -----------------------------------
@@ -89,6 +90,51 @@ def second_one():
     fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 
     title = 'second one'
+
+    return fig, title
+
+
+def third_one():
+    df = px.data.election()
+    geojson = px.data.election_geojson()
+    # print(geojson['features'][0])
+    # #
+    # print(data['features'][0])
+    # print(df.head())
+    fig = px.choropleth(
+        # fig=px.choropleth_mapbox(
+        # a dict for column names like district, counties etc ...
+        df,
+        geojson=geojson,
+        color='winner',  # color='Joly',  # color='Bergeron',
+        # this paints it
+        locations="district",
+        hover_name="district",
+        featureidkey="properties.district",
+        # needs CENTER!!!
+        # -----------------------------------
+        center={"lat": 45.5517, "lon": -73.7073},
+        # zoom=9,
+        # center={
+        #     "lat": 51.612,  # value raises into the north
+        #     "lon": 10.391  # lower to the west
+        # },
+        # zoom=5,
+        # center={
+        #     "lat": 54.112,  # value raises into the north
+        #     "lon": 10.391  # lower to the west
+        # },
+        # zoom=7,
+        # -----------------------------------
+        # mapbox_style="carto-positron",
+        # projection='natural earth',
+        projection='orthographic',
+        # projection='miller',
+    )
+    fig.update_geos(fitbounds="locations", visible=False)
+    fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+
+    title = 'third one is like secound but not'
 
     return fig, title
 
@@ -127,8 +173,10 @@ def create_geo_fig_title(caller):
     """Create the map by {}."""  # TODO: {}.format() with something
     if caller == 'one':
         fig, title = first_one()
-    if caller == 'two':
+    elif caller == 'two':
         fig, title = second_one()
+    elif caller == 'three':
+        fig, title = third_one()
     elif caller == 'gap':
         fig, title = coro_gap()
     return fig, title
