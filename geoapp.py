@@ -22,7 +22,7 @@ import plotly.express as px
 #     data = json.load(f)
 
 """
-type, crs, source, features
+type, crs, source, featuresPP
 geojson:
 
 type, properties, geometry, id
