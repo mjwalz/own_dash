@@ -33,3 +33,5 @@ value=[]
 
 # TODO
 - [ ] let somehow a program read the apps in and hanle, give it as a html to the browser
+- [ ] and yea. it is with TABS...
+# CREATED sunburst_tabs.py
