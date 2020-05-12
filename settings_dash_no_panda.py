@@ -274,6 +274,7 @@ character, parent, value = get_cha_par_val(file_bachelor)
 hold_up_ba = calculate_sunburst_info(character, parent, value)
 
 character, parent, value = get_cha_par_val(file_master)
+
 hold_up_ma = calculate_sunburst_info(character, parent, value)
 
 
