@@ -29,6 +29,10 @@ value=[]
 )
 ```
 
+## Data Handling
+\*\_app.py will get data from \*\_data.py and fig info from \*.py
+and will display it as known.
+
 # simple rick
 
 # TODO
