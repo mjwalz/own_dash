@@ -36,6 +36,13 @@ and will display it as known.
 # simple rick
 
 # TODO
-- [ ] let somehow a program read the apps in and hanle, give it as a html to the browser
-- [ ] and yea. it is with TABS...
-# CREATED sunburst_tabs.py
+- [X] let somehow a program read the apps in and hanDle, give it as a html to the browser
+ - more or less...
+- [x] and yea. it is with TABS...
+
+# CREATED 
+{name}.py  # infrastructure for the following files
+{name}_data.py  # prepare the data so it fits in the app structure
+{name}_app.py  # run visual app with it
+
+### test it with foor_runner_app.py
