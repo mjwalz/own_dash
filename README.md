@@ -39,6 +39,7 @@ and will display it as known.
 - [X] let somehow a program read the apps in and hanDle, give it as a html to the browser
  - more or less...
 - [x] and yea. it is with TABS...
+- [ ] maybe put some apps with two files in each folder... I just mean äh. many files though
 
 # CREATED 
 {name}.py  # infrastructure for the following files
