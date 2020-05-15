@@ -3,71 +3,79 @@
 display a sunburst for healthy food.
 """
 
-import dash
+
+from own_dash.food_runner import fig, multi_figs#, sunburst_info_figs
+from projects.food_runner.data.food_runner_data import (
+                                                        # sunburst_info,
+                                                        # sunburst_info_tabs,
+                                                        sunburst_info_figs,
+                                                        get_tabs
+                                                        )
+
+#---
+from dash.dependencies import Input, Output
+#
 import dash_core_components as dcc
 import dash_html_components as html
 
-from dash.dependencies import Input, Output
+import dash
+# change it in get_app()
+# app = DjangoDash('Sunburst')
+app = dash.Dash(__name__)
+#---
 
-from own_dash.food_runner import fig as fig
+# the amount of values in tabs will be the amount of tabs
+#figs = [fig]*4
+# get tab list
+# tabs = get_tabs()
 
-fig_one = fig
-title_one = 'Nahrung'
-# app = DjangoDash('Sunburst')  # , external_stylesheets=external_stylesheets)
-app = dash.Dash(__name__)  # , external_stylesheets=external_stylesheets)
+figs = multi_figs()
+print(figs['Nahrung'])
+[print(each) for each in figs.items()]
+# print(figs)
 
-app.layout = html.Div([
-    dcc.Tabs(id="tabs", value='tab-1', children=[
-        dcc.Tab(label=title_one, value='tab-1'),
-        # dcc.Tab(label=title_two, value='tab-2'),
-    ]),
-    html.Div(id='tabs-content'),
-], style={'font-family': 'Courier'}
-)
+key_list = [key for key in figs.keys()]
+
+def get_layout(topics):
+    children = [dcc.Tab(label=tab, value=f'tab-{i+1}') for i, tab in enumerate(topics) ]
+
+    return html.Div([
+        dcc.Tabs(id='tabs', value='tab-1',
+        children=children
+        ),
+        html.Div(id='tabs-content'),
+        ], style={'font-family': 'Courier'}
+        )
 
 
+app.layout = get_layout([key for key in figs.keys()])
+
+graph_nr = ['one','two','three','four','five','six','seven','eight']
+
+def get_content_render(fig, index):
+    return html.Div([
+            dcc.Graph(id=f'graph_{graph_nr[index]}', figure=fig)
+            ], style={'font-family': 'Helvetica',
+            '#123456': 'red',
+            'marginBottom': 50,
+            },
+            className='container'  # className='six columns'
+        )
+# get different figs
+def get_content(topic, index):
+    return get_content_render(figs[topic], index)
+
+# render_content(app, figs)
 @app.callback(Output('tabs-content', 'children'),
               [Input('tabs', 'value')])
 def render_content(tab):
     """Render by start and callback."""
-
-    # return html.Div([
-    #
-    #     # html.H3(children='The ' + title_two + ' Studies'),
-    #     dcc.Graph(id='graph', figure=fig)
-    # ], style={'font-family': 'Helvetica',
-    #           '#123456': 'red',
-    #           'marginBottom': 50,
-    #           },
-    #     className='container'  # className='six columns'
-    # )
-    # # if tab == 'tab-1':
-    return html.Div([
-
-        # html.H3(children='The ' + title_one + ' Studies'),
-        dcc.Graph(id='graph_one', figure=fig_one)
-    ],
-        style={'font-family': 'Helvetica',
-               '#123456': 'red',
-               'marginBottom': 50,
-               'marginTop': 25
-               },
-        # className='Sunburst'
-        # className='six columns'
-    ),
-    #  # ---
-    # elif tab == 'tab-2':
-    #     return html.Div([
-    #
-    #         # html.H3(children='The ' + title_two + ' Studies'),
-    #         dcc.Graph(id='graph_two', figure=fig_two)
-    #     ], style={'font-family': 'Helvetica',
-    #               '#123456': 'red',
-    #               'marginBottom': 50,
-    #               },
-    #         className='container'  # className='six columns'
-    #     )
-
+    rander_holder = True
+    for index in range(len(figs)):
+        tabbi = f'tab-{index+1}'
+        print(tabbi, 'in tabbi')
+        if tab == tabbi:
+            return get_content(key_list[index], index)
 
 
 if __name__ == '__main__':

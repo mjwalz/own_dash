@@ -29,7 +29,22 @@ value=[]
 )
 ```
 
+## Data Handling
+\*\_app.py will get data from \*\_data.py and fig info from \*.py
+and will display it as known.
+
 # simple rick
 
 # TODO
-- [ ] let somehow a program read the apps in and hanle, give it as a html to the browser
+- [X] let somehow a program read the apps in and hanDle, give it as a html to the browser
+ - more or less...
+- [x] and yea. it is with TABS...
+- [ ] maybe put some apps with two files in each folder... I just mean äh. many files though
+
+# CREATED 
+{name}.py  # infrastructure for the following files
+{name}_data.py  # prepare the data so it fits in the app structure
+{name}_app.py  # run visual app with it
+
+### test it with food_runner_app.py
+### dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
