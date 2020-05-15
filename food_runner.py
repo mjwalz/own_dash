@@ -24,7 +24,7 @@ except ImportError:
     TABS = ['WabiSabi', 'Nahrung', '']
 
     def sunburst_info(tab):
-        """."""
+        """was there a default value?"""
         return sunburst_info_temlplate
 
     def get_tabs():
@@ -33,7 +33,10 @@ except ImportError:
         one with data in projects.
         """
         return TABS
-from own_dash.sunburst import create_sunburst_fig
+try:
+    from own_dash.sunburst import create_sunburst_fig
+except ModuleNotFoundError:
+    from sunburst import create_sunburst_fig
 # from own_dash.food_runner import get_figs
 
 
