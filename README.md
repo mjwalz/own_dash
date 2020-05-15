@@ -45,4 +45,5 @@ and will display it as known.
 {name}_data.py  # prepare the data so it fits in the app structure
 {name}_app.py  # run visual app with it
 
-### test it with foor_runner_app.py
+### test it with food_runner_app.py
+### dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
