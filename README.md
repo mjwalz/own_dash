@@ -48,3 +48,6 @@ and will display it as known.
 
 ### test it with food_runner_app.py
 ### dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
+
+# update
+teh are where project can not be read in it has to get an update and take default example data
