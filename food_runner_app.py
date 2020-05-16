@@ -30,7 +30,6 @@ except ImportError:
 #     )
 
 
-<<<<<<< HEAD
 from own_dash.food_runner import (
         fig,  # is used but not needed...
         multi_figs  # will read in multi figures with sunburst_info_figs
@@ -41,11 +40,9 @@ from projects.food_runner.data.food_runner_data import (
     )
 
 #---
-=======
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
->>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
 from dash.dependencies import Input, Output
 
 # append(getcwd())
@@ -99,19 +96,6 @@ graph_nr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
 
 
 def get_content_render(fig, index):
-<<<<<<< HEAD
-    # the graph index must be set to display
-    return html.Div([
-            dcc.Graph(id=f'graph_{graph_nr[index]}', figure=fig)
-            ], style={'font-family': 'Helvetica',
-            '#123456': 'red',
-            'marginBottom': 50,
-            },
-            className='container'  # className='six columns'
-        )
-
-
-=======
     """Give an indexed a graph_nr [1,8] and a fig."""
     return html.Div([
         dcc.Graph(id=f'graph_{graph_nr[index]}', figure=fig)
@@ -121,16 +105,11 @@ def get_content_render(fig, index):
               },
         className='container'  # className='six columns'
     )
->>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
 # get different figs
 
 
 def get_content(topic, index):
-<<<<<<< HEAD
-    # get content for specific figs ordered by keys, topics, tabs
-=======
     """Get the content to be randered as figs and topics in the app."""
->>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
     return get_content_render(figs[topic], index)
 
 
@@ -138,11 +117,8 @@ def get_content(topic, index):
 @app.callback(Output('tabs-content', 'children'),
               [Input('tabs', 'value')])
 def render_content(tab):
-<<<<<<< HEAD
-=======
     """Render by start and callback."""
     # rander_holder = True
->>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
     for index in range(len(figs)):
         """Render by start and callback."""
         tabbi = f'tab-{index+1}'

@@ -13,7 +13,7 @@ sunburst
  - get data structire as dict: character, parent, value...
 - `create_sunburst_fig(sunburstinfo:dict()) -> fig:`
 - run python food_runner_app.py it will get the data from food_runner_data and hanldes | passes
-    - [ ] local
+    - [ ] locale
 
 - wants a structure as:
 `update_dict(sunburst_info_dict, update)`
@@ -51,29 +51,23 @@ of course after you `source`d the `.venv/bin/activate` in which you will
 - [X] let somehow a program read the apps in and hanDle, give it as a html to the browser
 - more or less...
 - [x] and yea. it is with TABS...
-<<<<<<< HEAD
 - [ ] prepare an easy django read in :-1:
 ---
 
 - [ ] ah yea. the data hdanling is still local :+1:
-=======
 - [ ] maybe put some apps with two files in each folder... I just mean äh. many files though
 
-# CREATED 
+# CREATED
 {name}.py  # infrastructure for the following files
 {name}_data.py  # prepare the data so it fits in the app structure
 {name}_app.py  # run visual app with it
 
 ### test it with food_runner_app.py
 ### dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
-<<<<<<< HEAD
->>>>>>> 54a5428f8160f060329583c047e501092592bf7d
-=======
 
 # update
 teh are where project can not be read in it has to get an update and take default example data
->>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
 
 
-# DATA . 
+# DATA .
 looks like it wasn't correctly on `.gitignore` - so data was commited on misfortune

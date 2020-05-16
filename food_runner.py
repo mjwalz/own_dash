@@ -86,20 +86,4 @@ def multi_figs():
     return holder
 
 
-<<<<<<< HEAD
-fig = create_sunburst_fig(sunburst_info())
-=======
-# character, parent, value
-sunburst_info_f = sunburst_info()
-# sunburst_info = dict(
-#     character=['Kohlenhydrate', 'Fette', 'Proteine', 'Stärke'],
-#     parent=['Nahrung']*4,
-#     value=[1]*4,
-# )
-# for key, value in sunburst_info.items():
-#     print(key, value)
-
-# print(sunburst_info, 'in food_runner.py')
-fig = create_sunburst_fig(sunburst_info_f)
-# tabs = get_tabs()
->>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
+fig = create_sunburst_fig(sunburst_info(tab=''))
