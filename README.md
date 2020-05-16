@@ -66,4 +66,14 @@ of course after you `source`d the `.venv/bin/activate` in which you will
 
 ### test it with food_runner_app.py
 ### dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
+<<<<<<< HEAD
 >>>>>>> 54a5428f8160f060329583c047e501092592bf7d
+=======
+
+# update
+teh are where project can not be read in it has to get an update and take default example data
+>>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
+
+
+# DATA . 
+looks like it wasn't correctly on `.gitignore` - so data was commited on misfortune

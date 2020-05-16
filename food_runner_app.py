@@ -2,8 +2,35 @@
 
 display a sunburst for healthy food.
 """
+try:
+    from own_dash.food_runner import (
+        # fig,
+        multi_figs  # , sunburst_info_fig
+    )
+except ImportError:
+    from food_runner import (
+        # fig,
+        multi_figs  # , sunburst_info_fig
+    )
+
+    import os
+    print(os.getcwd())
+
+    # from os import getcwd, path
+    # import sys
+    #
+    # print(getcwd())
+    # path_holder = path.join(getcwd(), '..')
+    # print(path_holder)
+    # sys.path(path_holder)
+# finally:
+#     from own_dash.food_runner import (
+#         # fig,
+#         multi_figs  # , sunburst_info_fig
+#     )
 
 
+<<<<<<< HEAD
 from own_dash.food_runner import (
         fig,  # is used but not needed...
         multi_figs  # will read in multi figures with sunburst_info_figs
@@ -14,19 +41,32 @@ from projects.food_runner.data.food_runner_data import (
     )
 
 #---
-from dash.dependencies import Input, Output
-#
-import dash_core_components as dcc
-import dash_html_components as html
-
+=======
 import dash
+import dash_html_components as html
+import dash_core_components as dcc
+>>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
+from dash.dependencies import Input, Output
+
+# append(getcwd())
+
+# from projects.food_runner.data.food_runner_data import (
+#     # sunburst_info,
+#     # sunburst_info_tabs,
+#     sunburst_info_figs,
+#     get_tabs
+# )
+
+# ---
+#
+
 # change it in get_app()
 # app = DjangoDash('Sunburst')
 app = dash.Dash(__name__)
-#---
+# ---
 
 # the amount of values in tabs will be the amount of tabs
-#figs = [fig]*4
+# figs = [fig]*4
 # get tab list
 # tabs = get_tabs()
 
@@ -39,23 +79,27 @@ key_list = [key for key in figs.keys()]
 
 
 def get_layout(topics):
-    children = [dcc.Tab(label=tab, value=f'tab-{i+1}') for i, tab in enumerate(topics) ]
+    """Give a Topic a Tab and an Index."""
+    children = [dcc.Tab(label=tab,
+                        value=f'tab-{i+1}') for i, tab in enumerate(topics)]
 
     return html.Div([
         dcc.Tabs(id='tabs', value='tab-1',
-        children=children
-        ),
+                 children=children
+                 ),
         html.Div(id='tabs-content'),
-        ], style={'font-family': 'Courier'}
-        )
+    ], style={'font-family': 'Courier'}
+    )
 
 # here we create the tabs by keys
 app.layout = get_layout([key for key in figs.keys()])
 
-graph_nr = ['one','two','three','four','five','six','seven','eight']
+graph_nr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
+
 
 
 def get_content_render(fig, index):
+<<<<<<< HEAD
     # the graph index must be set to display
     return html.Div([
             dcc.Graph(id=f'graph_{graph_nr[index]}', figure=fig)
@@ -67,9 +111,26 @@ def get_content_render(fig, index):
         )
 
 
+=======
+    """Give an indexed a graph_nr [1,8] and a fig."""
+    return html.Div([
+        dcc.Graph(id=f'graph_{graph_nr[index]}', figure=fig)
+    ], style={'font-family': 'Helvetica',
+              '#123456': 'red',
+              'marginBottom': 50,
+              },
+        className='container'  # className='six columns'
+    )
+>>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
 # get different figs
+
+
 def get_content(topic, index):
+<<<<<<< HEAD
     # get content for specific figs ordered by keys, topics, tabs
+=======
+    """Get the content to be randered as figs and topics in the app."""
+>>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
     return get_content_render(figs[topic], index)
 
 
@@ -77,6 +138,11 @@ def get_content(topic, index):
 @app.callback(Output('tabs-content', 'children'),
               [Input('tabs', 'value')])
 def render_content(tab):
+<<<<<<< HEAD
+=======
+    """Render by start and callback."""
+    # rander_holder = True
+>>>>>>> 4bea4bf2321c23fb4696a328ebe8a81811e8b24f
     for index in range(len(figs)):
         """Render by start and callback."""
         tabbi = f'tab-{index+1}'
