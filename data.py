@@ -1,5 +1,4 @@
-"""Data."""
-# examples for locale data
+
 food_runner = {
     'Nahrung': dict(
         parent=[
