@@ -18,13 +18,14 @@ except ImportError:
         - sunburst_info()
         - with tab and so on
     """
-    # those will be updated
-    sunburst_info_temlplate = ''
+    from data import food_runner
+    # those will be updated - default
+    sunburst_info_temlplate = food_runner
+    # TABS = ['WabiSabi', 'Nahrung', '']
+    TABS = ['Nahrung', 'Rohstoffe']
 
-    TABS = ['WabiSabi', 'Nahrung', '']
-
-    def sunburst_info(tab):
-        """was there a default value?"""
+    def sunburst_info(tab=TABS):
+        """Was there a default value?."""
         return sunburst_info_temlplate
 
     def get_tabs():

@@ -67,10 +67,17 @@ of course after you `source`d the `.venv/bin/activate` in which you will
 
 # update
 teh are where project can not be read in it has to get an update and take default example data
+<<<<<<< HEAD
+# TODO
+=======
 
 
 # DATA .
 looks like it wasn't correctly on `.gitignore` - so data was commited on misfortune
+<<<<<<< HEAD
 
 # Textarea will be awesome for using a input with `-` for the tree
 # totaly needs an overwork for the terminal output
+=======
+>>>>>>> c38579d8ad0ec38b7a18004cf8502c822bcc56da
+>>>>>>> 25961f84164227a3c36dfc7d3bb29eeb1ae2e597

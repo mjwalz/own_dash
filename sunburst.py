@@ -7,7 +7,7 @@ from settings_dash_no_panda import hold_up_ma
 # from owndash.models import Sunburst
 
 
-def create_sunburst_fig(sunburst_info:dict()):  # --> fig
+def create_sunburst_fig(sunburst_info: dict):  # --> fig:
     """Create the sunburst by sunburst_dict."""
     fig = go.Figure(go.Sunburst(
         labels=sunburst_info['character'],
