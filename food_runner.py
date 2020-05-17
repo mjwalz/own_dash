@@ -40,9 +40,45 @@ except ModuleNotFoundError:
     from sunburst import create_sunburst_fig
 # from own_dash.food_runner import get_figs
 
+"""
+For Jankins, Travsi or any other data tester:
+We need to provide data -
+like from `food_runner_data.py` is coming,
+but data is local so we need to provide a default
+which will be updated
+    - update_dict
+    - so it will be changed in version controlle (VC)
+    - but not all the data hangling functions -
+
+From projects/{{ name }}/data we will just get the result for an Visualization
+ We don't want to waste space for data handling and also not in the resources.
+ Maybe check Lambda Functions
+ and yea test will be done on the data site
+ Maybe an import test of the default data
+
+
+ For sunburst we need a typical data structure: check it in the `README.md`
+"""
+
 
 def multi_figs():
-    """Give the created figs from data for app."""
+    """Give the created figs from data for app.
+
+    Max amount of the plotted graphs:
+        For BackEnd hangling (Flask, Django, Dash, Plotly)
+        Max: 8 - or eight in written, if you prevare to like to read more...
+
+        graph_nr = [
+                    'one',
+                    'two',
+                    'three',
+                    'four',
+                    'five',
+                    'six',
+                    'seven',
+                    'eight'
+                    ]
+    """
     holder = dict()
     for tab in get_tabs():
         # print('\n', tab, '\n\t', 'tab in multi_figs()')
@@ -51,16 +87,4 @@ def multi_figs():
     return holder
 
 
-# character, parent, value
-sunburst_info_f = sunburst_info()
-# sunburst_info = dict(
-#     character=['Kohlenhydrate', 'Fette', 'Proteine', 'Stärke'],
-#     parent=['Nahrung']*4,
-#     value=[1]*4,
-# )
-# for key, value in sunburst_info.items():
-#     print(key, value)
-
-# print(sunburst_info, 'in food_runner.py')
-fig = create_sunburst_fig(sunburst_info_f)
-# tabs = get_tabs()
+fig = create_sunburst_fig(sunburst_info(tab=''))

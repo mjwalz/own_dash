@@ -30,6 +30,16 @@ except ImportError:
 #     )
 
 
+from own_dash.food_runner import (
+        fig,  # is used but not needed...
+        multi_figs  # will read in multi figures with sunburst_info_figs
+    )
+from projects.food_runner.data.food_runner_data import (
+        sunburst_info_figs,  # returns a fig
+        get_tabs
+    )
+
+#---
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
@@ -58,10 +68,10 @@ app = dash.Dash(__name__)
 # tabs = get_tabs()
 
 figs = multi_figs()
-print(figs['Nahrung'])
-[print(each) for each in figs.items()]
-# print(figs)
 
+[print(each) for each in figs.items()]
+
+# the keys are the TABS
 key_list = [key for key in figs.keys()]
 
 
@@ -78,10 +88,11 @@ def get_layout(topics):
     ], style={'font-family': 'Courier'}
     )
 
-
+# here we create the tabs by keys
 app.layout = get_layout([key for key in figs.keys()])
 
 graph_nr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
+
 
 
 def get_content_render(fig, index):
@@ -101,6 +112,7 @@ def get_content(topic, index):
     """Get the content to be randered as figs and topics in the app."""
     return get_content_render(figs[topic], index)
 
+
 # render_content(app, figs)
 @app.callback(Output('tabs-content', 'children'),
               [Input('tabs', 'value')])
@@ -108,6 +120,7 @@ def render_content(tab):
     """Render by start and callback."""
     # rander_holder = True
     for index in range(len(figs)):
+        """Render by start and callback."""
         tabbi = f'tab-{index+1}'
         print(tabbi, 'in tabbi')
         if tab == tabbi:
