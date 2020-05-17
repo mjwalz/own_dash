@@ -5,12 +5,14 @@ display a sunburst for healthy food.
 try:
     from own_dash.food_runner import (
         # fig,
-        multi_figs  # , sunburst_info_fig
+        multi_figs,  # , sunburst_info_fig
+        msgs
     )
 except ImportError:
     from food_runner import (
         # fig,
-        multi_figs  # , sunburst_info_fig
+        multi_figs,  # , sunburst_info_fig
+        msgs
     )
 
     import os
@@ -69,36 +71,55 @@ app = dash.Dash(__name__)
 
 figs = multi_figs()
 
+# display the figs info in terminal for all
 [print(each) for each in figs.items()]
 
 # the keys are the TABS
-key_list = [key for key in figs.keys()]
+TABS = key_list = [key for key in figs.keys()]
+
+all_messeges = msgs  # it just a dict
 
 
-def get_layout(topics):
+def get_layout(topics:list, msg:str=''):
     """Give a Topic a Tab and an Index."""
+    # the_content = []
+    # if topics:
+    #     # msg = """Select your current industry"""
+    #     the_content.append(html.H5(msg))
+    # #     html.Div([
+    # # html.Div(
+    # #     [
+    # #         html.Div(
+    # #             [
+    # #                 html.H6("""Select your current industry""",
+    # #                         style={'margin-right': '2em'})
+    # #             ],
+    # #         ),
     children = [dcc.Tab(label=tab,
                         value=f'tab-{i+1}') for i, tab in enumerate(topics)]
-
+    # is returning something !
     return html.Div([
         dcc.Tabs(id='tabs', value='tab-1',
                  children=children
                  ),
         html.Div(id='tabs-content'),
+        # html.Div(the_content)
     ], style={'font-family': 'Courier'}
     )
 
 # here we create the tabs by keys
-app.layout = get_layout([key for key in figs.keys()])
+app.layout = get_layout([key for key in figs.keys()], msg='test')
 
 graph_nr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
 
 
 
-def get_content_render(fig, index):
+def get_content_render(fig, index:int, content:str=''):
     """Give an indexed a graph_nr [1,8] and a fig."""
+    # returns a html tag
     return html.Div([
-        dcc.Graph(id=f'graph_{graph_nr[index]}', figure=fig)
+        dcc.Graph(id=f'graph_{graph_nr[index]}', figure=fig),
+        html.H3(content),
     ], style={'font-family': 'Helvetica',
               '#123456': 'red',
               'marginBottom': 50,
@@ -108,9 +129,12 @@ def get_content_render(fig, index):
 # get different figs
 
 
-def get_content(topic, index):
+def get_content(topic:str, index:int):
     """Get the content to be randered as figs and topics in the app."""
-    return get_content_render(figs[topic], index)
+    if topic in all_messeges.keys():
+        content = all_messeges[topic]
+    # returns a html tag
+    return get_content_render(figs[topic], index, content)
 
 
 # render_content(app, figs)
@@ -124,6 +148,7 @@ def render_content(tab):
         tabbi = f'tab-{index+1}'
         print(tabbi, 'in tabbi')
         if tab == tabbi:
+            # returns the complete content for the browser
             return get_content(key_list[index], index)
 
 

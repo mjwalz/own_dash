@@ -71,3 +71,6 @@ teh are where project can not be read in it has to get an update and take defaul
 
 # DATA .
 looks like it wasn't correctly on `.gitignore` - so data was commited on misfortune
+
+# Textarea will be awesome for using a input with `-` for the tree
+# totaly needs an overwork for the terminal output

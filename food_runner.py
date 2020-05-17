@@ -7,7 +7,7 @@ try:
     # from projects.food_runner.data.food_runner_data import ranked, checking_ranked
     from projects.food_runner.data.food_runner_data import sunburst_info
     # from projects.food_runner.data.food_runner_data import sunburst_info_tabs
-    from projects.food_runner.data.food_runner_data import get_tabs
+    from projects.food_runner.data.food_runner_data import get_tabs, get_msg
 # this area will be updated !
 except ImportError:
     """
@@ -86,4 +86,6 @@ def multi_figs():
     return holder
 
 
-fig = create_sunburst_fig(sunburst_info(tab=''))
+fig = create_sunburst_fig(sunburst_info())
+
+msgs = get_msg()
