@@ -32,16 +32,16 @@ except ImportError:
 #     )
 
 
-from own_dash.food_runner import (
-        fig,  # is used but not needed...
-        multi_figs  # will read in multi figures with sunburst_info_figs
-    )
-from projects.food_runner.data.food_runner_data import (
-        sunburst_info_figs,  # returns a fig
-        get_tabs
-    )
+# from own_dash.food_runner import (
+#         fig,  # is used but not needed...
+#         multi_figs  # will read in multi figures with sunburst_info_figs
+#     )
+# from projects.food_runner.data.food_runner_data import (
+#     sunburst_info_figs,  # returns a fig
+#     get_tabs
+# )
 
-#---
+# ---
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
@@ -80,7 +80,7 @@ TABS = key_list = [key for key in figs.keys()]
 all_messeges = msgs  # it just a dict
 
 
-def get_layout(topics:list, msg:str=''):
+def get_layout(topics: list, msg: str = ''):
     """Give a Topic a Tab and an Index."""
     # the_content = []
     # if topics:
@@ -107,14 +107,14 @@ def get_layout(topics:list, msg:str=''):
     ], style={'font-family': 'Courier'}
     )
 
+
 # here we create the tabs by keys
 app.layout = get_layout([key for key in figs.keys()], msg='test')
 
 graph_nr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
 
 
-
-def get_content_render(fig, index:int, content:str=''):
+def get_content_render(fig, index: int, content: str = ''):
     """Give an indexed a graph_nr [1,8] and a fig."""
     # returns a html tag
     return html.Div([
@@ -129,10 +129,12 @@ def get_content_render(fig, index:int, content:str=''):
 # get different figs
 
 
-def get_content(topic:str, index:int):
+def get_content(topic: str, index: int):
     """Get the content to be randered as figs and topics in the app."""
     if topic in all_messeges.keys():
         content = all_messeges[topic]
+    else:
+        content = ''
     # returns a html tag
     return get_content_render(figs[topic], index, content)
 

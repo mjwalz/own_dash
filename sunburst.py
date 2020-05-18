@@ -10,8 +10,8 @@ from settings_dash_no_panda import hold_up_ma
 def create_sunburst_fig(sunburst_info: dict):  # --> fig:
     """Create the sunburst by sunburst_dict."""
     fig = go.Figure(go.Sunburst(
-        labels=sunburst_info['character'],
         parents=sunburst_info['parent'],
+        labels=sunburst_info['character'],
         values=sunburst_info['value'],
         branchvalues="total",
         marker=dict(
@@ -33,7 +33,7 @@ def create_sunburst_fig(sunburst_info: dict):  # --> fig:
         showlegend=True,
         height=512,
     )
-    print(sunburst_info)
+    # print(sunburst_info)
     return fig
 
 
@@ -45,8 +45,8 @@ def create_sunburst_fig_title(caller):
         sunburst_info, sunburst_title = hold_up_ma
 
     fig = go.Figure(go.Sunburst(
-        labels=sunburst_info['character'],
         parents=sunburst_info['parent'],
+        labels=sunburst_info['character'],
         values=sunburst_info['value'],
         branchvalues="total",
         marker=dict(

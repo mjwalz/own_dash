@@ -20,13 +20,17 @@ except ImportError:
     """
     from data import food_runner
     # those will be updated - default
-    sunburst_info_temlplate = food_runner
+    # sunburst_info_temlplate = food_runner
     # TABS = ['WabiSabi', 'Nahrung', '']
     TABS = [each for each in food_runner.keys()]
 
-    def sunburst_info(tab=TABS):
+    print(TABS)
+
+    def sunburst_info(tab=''):
         """Was there a default value?."""
-        return sunburst_info_temlplate
+        # print(tab)
+        # shouldn't be empty in this file !
+        return food_runner[tab]
 
     def get_tabs():
         """Wil be executet if the machine is not the local.
@@ -34,6 +38,11 @@ except ImportError:
         one with data in projects.
         """
         return TABS
+
+    def get_msg():
+        """."""
+        return {}
+
 try:
     from own_dash.sunburst import create_sunburst_fig
 except ModuleNotFoundError:
@@ -47,7 +56,7 @@ like from `food_runner_data.py` is coming,
 but data is local so we need to provide a default
 which will be updated
     - update_dict
-    - so it will be changed in version controlle (VC)
+    - so it will be changed in version control (VC)
     - but not all the data hangling functions -
 
 From projects/{{ name }}/data we will just get the result for an Visualization
@@ -81,12 +90,10 @@ def multi_figs():
     """
     holder = dict()
     for tab in get_tabs():
-        # print('\n', tab, '\n\t', 'tab in multi_figs()')
-        # print(sunburst_info(tab), '\n\t', 'sunburst_info in multi_figs()', '\n')
         holder[tab] = create_sunburst_fig(sunburst_info(tab))
     return holder
 
 
-fig = create_sunburst_fig(sunburst_info())
+# fig = create_sunburst_fig(sunburst_info())
 
 msgs = get_msg()
