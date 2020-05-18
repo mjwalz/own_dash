@@ -22,7 +22,7 @@ except ImportError:
     # those will be updated - default
     sunburst_info_temlplate = food_runner
     # TABS = ['WabiSabi', 'Nahrung', '']
-    TABS = ['Nahrung', 'Rohstoffe']
+    TABS = [each for each in food_runner.keys()]
 
     def sunburst_info(tab=TABS):
         """Was there a default value?."""
