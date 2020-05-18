@@ -22,6 +22,7 @@ except ImportError:
     # those will be updated - default
     # sunburst_info_temlplate = food_runner
     # TABS = ['WabiSabi', 'Nahrung', '']
+    # TABS = [each for each in food_runner.keys()]
     TABS = [each for each in food_runner.keys()]
 
     print(TABS)
