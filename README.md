@@ -1,18 +1,21 @@
+
 # own-dash
 own-dash is an extension of dash-plotly
 
 - simple dia / viz / illustration
 - same data flow
 
-## it_structure_app()
+<!-- ### test it with food_runner_app.py -->
+## dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
+### virtual environments
+they are used to  store the needed libraries to source/run that code:
+## `python it_structure_app()`
 - doesn't have to be updated anymore
 - [ ] change the import name form `data.py` to something and maybe change the way it updates files by name or something
     - [ ] change also PATH in projects food_runner
 
 ## food_runner_app()
 
-<!-- ### test it with food_runner_app.py -->
-## dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
 
 
 ## sunburst:
@@ -103,6 +106,8 @@ danger_data_danger.py is showing a nice way to design a data file in
         - Topic11
         - Topic12
     - Topic2
+## TAKE a look at `data/it_structure.py`
+a dictionary wich contains the data
 
 # totaly needs an overwork for the terminal output
 # the character and parents are not allowed to be same named
