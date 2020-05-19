@@ -10,11 +10,47 @@ own-dash is an extension of dash-plotly
 ### virtual environments
 they are used to  store the needed libraries to source/run that code:
 ## `python it_structure_app()`
+this will run an app which can be looked at your local-host in your browser/client
+
+---
+# THE FOLLOWING IS development
+- [ ]
+---
+## `it_structure_app()`
 - doesn't have to be updated anymore
 - [ ] change the import name form `data.py` to something and maybe change the way it updates files by name or something
-    - [ ] change also PATH in projects food_runner
-
+- [ ] change also PATH in projects food_runner
 ## food_runner_app()
+---
+# DATA .
+looks like it wasn't correctly on `.gitignore` - so data was commited on misfortune
+- is now included again
+- [ ] don't upload trash again !
+
+
+# danger - it is back on
+danger_data_danger.py is showing a nice way to design a data file in
+`dirname(\__file__).endwith('data')``
+
+
+# Textarea will be awesome for using a input with `-` for the tree
+- [1,8]
+    - [1,8][1,8]
+        - [1,8][1,8][1,8]
+            - [1,8][1,8][1,8][1,8]
+                - [1,8][1,8][1,8][1,8][1,8]
+                    - [1,8][1,8][1,8][1,8][1,8][1,8]
+                        - [1,8][1,8][1,8][1,8][1,8][1,8][1,8]
+                            - [1,8][1,8][1,8][1,8][1,8][1,8][1,8][1,8]
+- it is solved with `depth`for now. should be changed in a nice flask app form
+- Topic
+    - Topic1
+        - Topic11
+        - Topic12
+    - Topic2
+## TAKE a look at `data/it_structure.py`
+a dictionary wich contains the data
+
 
 
 
@@ -77,37 +113,6 @@ of course after you `source`d the `.venv/bin/activate` in which you will
 
 # update
 here are where project can not be read in it has to get an update and take default example data
-
-
-
-# DATA .
-looks like it wasn't correctly on `.gitignore` - so data was commited on misfortune
-- is now included again
-- [ ] don't upload trash again !
-
-
-# danger - it is back on
-danger_data_danger.py is showing a nice way to design a data file in
-`dirname(\__file__).endwith('data')``
-
-
-# Textarea will be awesome for using a input with `-` for the tree
-- [1,8]
-    - [1,8][1,8]
-        - [1,8][1,8][1,8]
-            - [1,8][1,8][1,8][1,8]
-                - [1,8][1,8][1,8][1,8][1,8]
-                    - [1,8][1,8][1,8][1,8][1,8][1,8]
-                        - [1,8][1,8][1,8][1,8][1,8][1,8][1,8]
-                            - [1,8][1,8][1,8][1,8][1,8][1,8][1,8][1,8]
-- it is solved with `depth`for now. should be changed in a nice flask app form
-- Topic
-    - Topic1
-        - Topic11
-        - Topic12
-    - Topic2
-## TAKE a look at `data/it_structure.py`
-a dictionary wich contains the data
 
 # totaly needs an overwork for the terminal output
 # the character and parents are not allowed to be same named
