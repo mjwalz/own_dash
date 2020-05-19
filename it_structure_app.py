@@ -1,17 +1,15 @@
-"""Food runner display.
+"""IT display.
 
-display a sunburst for healthy food.
+it_structure
 """
 try:
-    from own_dash.food_runner import (
-        # fig,
-        multi_figs,  # , sunburst_info_fig
+    from own_dash.it_structure import (
+        multi_figs,
         msgs
     )
 except ImportError:
-    from food_runner import (
-        # fig,
-        multi_figs,  # , sunburst_info_fig
+    from it_structure import (
+        multi_figs,
         msgs
     )
 
@@ -20,7 +18,6 @@ import dash
 import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
-
 
 
 # app = DjangoDash('Sunburst')
@@ -41,34 +38,20 @@ all_messeges = msgs  # it just a dict
 
 def get_layout(topics: list, msg: str = ''):
     """Give a Topic a Tab and an Index."""
-    # the_content = []
-    # if topics:
-    #     # msg = """Select your current industry"""
-    #     the_content.append(html.H5(msg))
-    # #     html.Div([
-    # # html.Div(
-    # #     [
-    # #         html.Div(
-    # #             [
-    # #                 html.H6("""Select your current industry""",
-    # #                         style={'margin-right': '2em'})
-    # #             ],
-    # #         ),
     children = [dcc.Tab(label=tab,
                         value=f'tab-{i+1}') for i, tab in enumerate(topics)]
-    # is returning something !
     return html.Div([
         dcc.Tabs(id='tabs', value='tab-1',
                  children=children
                  ),
         html.Div(id='tabs-content'),
-        # html.Div(the_content)
     ], style={'font-family': 'Courier'}
     )
 
 
 # here we create the tabs by keys
 app.layout = get_layout([key for key in figs.keys()], msg='test')
+
 
 graph_nr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight']
 
@@ -85,7 +68,6 @@ def get_content_render(fig, index: int, content: str = ''):
               },
         className='container'  # className='six columns'
     )
-# get different figs
 
 
 def get_content(topic: str, index: int):

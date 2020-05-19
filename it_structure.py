@@ -3,35 +3,17 @@
 Example data or import from local projects with it as a PYTHONPATH.
 """
 try:
-    # from projects.food_runner.data.food_runner_data import sunburst as sunburst_food
-    # from projects.food_runner.data.food_runner_data import ranked, checking_ranked
     from projects.it_structure.data.it_structure_data import sunburst_info
-    # from projects.it_structure.data.it_structure_data import sunburst_info_tabs
     from projects.it_structure.data.it_structure_data import get_tabs, get_msg
-# this area will be updated !
 except ImportError:
-    """
-    TODO: return the right data example in the update
-
-    - how is the structure of
-        - sunburst_info_temlplate
-        - sunburst_info()
-        - with tab and so on
-    """
-    from data import food_runner
-    # those will be updated - default
-    # sunburst_info_temlplate = food_runner
-    # TABS = ['WabiSabi', 'Nahrung', '']
-    # TABS = [each for each in food_runner.keys()]
-    TABS = [each for each in food_runner.keys()]
-
-    print(TABS)
+    from data.it_structure import data
+    TABS = [each for each in data.keys()]
 
     def sunburst_info(tab=''):
         """Was there a default value?."""
         # print(tab)
         # shouldn't be empty in this file !
-        return food_runner[tab]
+        return data[tab]
 
     def get_tabs():
         """Wil be executet if the machine is not the local.
@@ -42,7 +24,14 @@ except ImportError:
 
     def get_msg():
         """."""
-        return {}
+        return {'IT':
+                """
+                Diese Sunburstdarstellung überblickt die Themen der Informationstechnik.
+                Sie sind nicht in totaler Gänze dargestellt, jedoch gibt es einen
+                rahmenden Einblick in relevante Bereiche, welche in jeglichen technischen
+                Prozessen ein Thema ist.
+                """
+                }
 
 try:
     from own_dash.sunburst import create_sunburst_fig
@@ -98,3 +87,7 @@ def multi_figs():
 # fig = create_sunburst_fig(sunburst_info())
 
 msgs = get_msg()
+
+
+if __name__ == "__main__":
+    print('\n\t', 'THIS IS A DATA FILE AND SHOULD NOT BE RUN AS A MAIN.', '\n\t')

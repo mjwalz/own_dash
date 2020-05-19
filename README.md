@@ -3,7 +3,17 @@ own-dash is an extension of dash-plotly
 
 - simple dia / viz / illustration
 - same data flow
--
+
+## it_structure_app()
+- doesn't have to be updated anymore
+- [ ] change the import name form `data.py` to something and maybe change the way it updates files by name or something
+    - [ ] change also PATH in projects food_runner
+
+## food_runner_app()
+
+<!-- ### test it with food_runner_app.py -->
+## dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
+
 
 ## sunburst:
 sunburstapp
@@ -62,9 +72,6 @@ of course after you `source`d the `.venv/bin/activate` in which you will
 {name}_data.py  # prepare the data so it fits in the app structure
 {name}_app.py  # run visual app with it
 
-### test it with food_runner_app.py
-### dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
-
 # update
 here are where project can not be read in it has to get an update and take default example data
 
@@ -72,7 +79,30 @@ here are where project can not be read in it has to get an update and take defau
 
 # DATA .
 looks like it wasn't correctly on `.gitignore` - so data was commited on misfortune
+- is now included again
+- [ ] don't upload trash again !
+
+
 # danger - it is back on
+danger_data_danger.py is showing a nice way to design a data file in
+`dirname(\__file__).endwith('data')``
+
 
 # Textarea will be awesome for using a input with `-` for the tree
+- [1,8]
+    - [1,8][1,8]
+        - [1,8][1,8][1,8]
+            - [1,8][1,8][1,8][1,8]
+                - [1,8][1,8][1,8][1,8][1,8]
+                    - [1,8][1,8][1,8][1,8][1,8][1,8]
+                        - [1,8][1,8][1,8][1,8][1,8][1,8][1,8]
+                            - [1,8][1,8][1,8][1,8][1,8][1,8][1,8][1,8]
+- it is solved with `depth`for now. should be changed in a nice flask app form
+- Topic
+    - Topic1
+        - Topic11
+        - Topic12
+    - Topic2
+
 # totaly needs an overwork for the terminal output
+# the character and parents are not allowed to be same named
