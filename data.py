@@ -1,42 +1,73 @@
-"""
-, after puttong cha par val
-and 
-"""# 2020-05-18 17:25:40.344032
+# 2020-05-19 14:59:23.278664
 """Data."""
 # examples for locale data
 food_runner = {
-"WabiSbi": dict(
+"IT": dict(
 parent=[
-"WabiSabi",
-"WabiSabi",
-"Wohin",
-"Woher"
+"IT",
+"IT",
+"Software",
+"Software",
+"Software",
+"Hardware",
+"Hardware",
+"Betriebssystem",
+"Betriebssystem",
+"Betriebssystem",
+"GUI",
+"GUI",
+"Programmiersprachen",
+"Betriebssystem",
+"Betriebssystem",
+"Betriebssystem",
+"Computer",
+"Computer",
+"Computer",
+"Programmiersprachen",
 ],
 character=[
-"Woher",
-"Wohin",
-"YES",
-"NO"
+"Software",
+"Hardware",
+"Betriebssystem",
+"GUI",
+"Programmiersprachen",
+"Betriebssystem",
+"Computer",
+"Linux",
+"Windows",
+"MacOS",
+"Display",
+"Ausgabe",
+"C++",
+"Rasbian",
+"Android",
+"Linux-Distributionen",
+"Mikrocontroller",
+"Personal Computer (PC)",
+"Tiny Computer",
+"Python",
 ],
 value=[
 1,
 1,
-1,
-1,
-],
-),
-"privat or public": dict(
-parent=[
-"pp"
-"pp"
-],
-character=[
-"privat",
-"public"
-],
-value=[
-1,
-1
+0.33333,
+0.33333,
+0.33333,
+0.5,
+0.5,
+0.16667,
+0.16667,
+0.16667,
+0.2,
+0.2,
+0.2,
+0.2,
+0.2,
+0.2,
+0.2,
+0.2,
+0.2,
+0.2,
 ],
 ),
 }

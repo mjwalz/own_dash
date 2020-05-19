@@ -43,7 +43,7 @@ f'{name}'.py  # infrastructure for the following files
 f'{name}_data'.py  # prepare the data so it fits in the app structure
 f'{name}_app'.py  # run visual app with it
 ```
-### test it with `python food_runner_app.py`
+### test it with `python it_structure_app.py`
 of course after you `source`d the `.venv/bin/activate` in which you will
 `pip install -r requirements.txt`.
 
@@ -66,18 +66,13 @@ of course after you `source`d the `.venv/bin/activate` in which you will
 ### dont forget to `pip install -r requirements.txt`in a `source .venv/bin/activate` a.k.a `virtualenv .venv` oder `python3 -m venv .venv`
 
 # update
-teh are where project can not be read in it has to get an update and take default example data
-<<<<<<< HEAD
-# TODO
-=======
+here are where project can not be read in it has to get an update and take default example data
+
 
 
 # DATA .
 looks like it wasn't correctly on `.gitignore` - so data was commited on misfortune
-<<<<<<< HEAD
+# danger - it is back on
 
 # Textarea will be awesome for using a input with `-` for the tree
 # totaly needs an overwork for the terminal output
-=======
->>>>>>> c38579d8ad0ec38b7a18004cf8502c822bcc56da
->>>>>>> 25961f84164227a3c36dfc7d3bb29eeb1ae2e597
