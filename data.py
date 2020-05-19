@@ -1,4 +1,4 @@
-# 2020-05-19 14:59:23.278664
+# 2020-05-19 15:07:00.524097
 """Data."""
 # examples for locale data
 food_runner = {
@@ -68,6 +68,26 @@ value=[
 0.2,
 0.2,
 0.2,
+],
+),
+"WabiSabi": dict(
+parent=[
+"WabiSabi",
+"WabiSabi",
+"Wohin",
+"Woher",
+],
+character=[
+"Woher",
+"Wohin",
+"YES",
+"NO",
+],
+value=[
+1,
+1,
+1,
+1,
 ],
 ),
 }
